@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishwamugi | Software Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #f7f9fc;
+      color: #1f2937;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+    header {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    header a {
+      color: #e0e7ff;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    section {
+      padding: 3rem 0;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #4f46e5;
+    }
+    .project, ul li, section p {
+      margin-bottom: 1.2rem;
+    }
+    ul li {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+    footer {
+      background-color: #e0e7ff;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      border-top: 1px solid #c7d2fe;
+    }
+    .dark-mode {
+      background-color: #1e293b;
+      color: #f1f5f9;
+    }
+    .dark-mode header {
+      background: linear-gradient(to right, #0f172a, #334155);
+      color: #f1f5f9;
+    }
+    .dark-mode footer {
+      background-color: #334155;
+      border-top-color: #475569;
+    }
+    .toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 id="title"></h1>
+      <p>Software Developer & Trainer</p>
+      <a href="mailto:viswamugi11@gmail.com">viswamugi11@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/viswamugi" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Passionate Software Developer and Trainer with hands-on experience in teaching and coding. Always exploring new technologies and committed to writing clean, efficient code. Looking for opportunities to apply my skills in real-world software development projects.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Airline Reservation System</h3>
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, MySQL</p>
+        <p>Flight booking system with login, booking, and cancellation features, plus seat availability updates.</p>
+      </div>
+      <div class="project">
+        <h3>Personal Portfolio Website</h3>
+        <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Bootstrap</p>
+        <p>Responsive site with a blog, contact form, and a section to showcase my work and skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript, Bootstrap, jQuery</li>
+        <li>C, C++, C#.NET, Java, Python</li>
+        <li>MySQL, SQL</li>
+        <li>Excel, Power BI, Tableau</li>
+        <li>Time management, teamwork, clean coding</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <p><strong>Bachelor of Computer Application</strong> – St. Joseph’s College (2020–2023)</p>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="container">
+      <h2>Achievements</h2>
+      <ul>
+        <li>1st Prize in Dance Competitions</li>
+        <li>Wall painting at Chennai International Airport</li>
+        <li>Participant in Isha Yoga Center activities</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Made with love by Vishwamugi © 2025</p>
+    </div>
+  </footer>
+
+  <button class="toggle-btn" onclick="toggleMode()">Toggle Mode</button>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+    const titleText = "Vishwamugi";
+    let index = 0;
+    function typeEffect() {
+      if (index < titleText.length) {
+        document.getElementById("title").innerHTML += titleText.charAt(index);
+        index++;
+        setTimeout(typeEffect, 150);
+      }
+    }
+    window.onload = typeEffect;
+  </script>
+</body>
+</html>
